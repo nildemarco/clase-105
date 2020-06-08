@@ -1,14 +1,14 @@
 import React from 'react';
-import useFetch from './useFetch';
+import useFetch from './hooks/useFetch';
 
 const Pokemones = () => {
 
-   const pokemones = useFetch(`https://pokeapi.co/api/v2/pokemon`)
+   const pokemones = useFetch(`https://pokeapi.co/api/v2/pokemon`);
    
     return (
             <>
           { pokemones &&
-              pokemones.results.map(p => <p key={p.id}>{p.name}</p>)
+              pokemones.results.map(p => <p key={p.name}>{p.name}</p>)
           }
           </>
     );
